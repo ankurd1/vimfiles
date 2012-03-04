@@ -36,15 +36,17 @@ set viminfo='10,\"100,:20,%,n~/.viminfo
 
 " Custom stuff starts here
 
-set t_Co=256
-colorscheme inkpot
-
-"behave like win
-source ~/.vim/mswin.vim
-
 "initialize pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
+
+set t_Co=256
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
+
+"behave like win
+source ~/.vim/mswin.vim
 
 "statusline
 set laststatus=2
@@ -136,6 +138,11 @@ vmap <C-C> "+y
 vmap <C-x> "+d
 
 nmap <leader>m :Mru<CR>
+
+nmap <C-Left> <C-W><Left>
+nmap <C-Right> <C-W><Right>
+nmap <C-Down> <C-W><Down>
+nmap <C-Up> <C-W><Up>
 
 "functions
 fun! <SID>DetectHTMLDjango()
