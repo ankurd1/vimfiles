@@ -144,6 +144,8 @@ nmap <C-Right> <C-W><Right>
 nmap <C-Down> <C-W><Down>
 nmap <C-Up> <C-W><Up>
 
+cmap w!! %!sudo tee > /dev/null %
+
 "functions
 fun! <SID>DetectHTMLDjango()
 	let n = 1
