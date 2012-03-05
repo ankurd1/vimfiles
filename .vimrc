@@ -60,28 +60,19 @@ set statusline+=%r      "read only flag
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
 set statusline+=%{&ff}] "file format
 set statusline+=%y      "filetype
+"set statusline+=%{fugitive#statusline()}
 set statusline+=%=      "left/right separator
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
 
 "variables
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
-let g:miniBufExplorerMoreThanOne=1000
-
 let g:netrw_ftp_cmd="ftp -p"
-
-let g:fuf_modesDisable = []
-let g:ftplugin_sql_omni_key_left  = '<C-Left>'
-let g:ftplugin_sql_omni_key_right  = '<C-right>'
 
 let NERDTreeIgnore = ['\.pyc$', '\~$', '\.o']
 
-let g:fuf_modesDisable = []
-let g:fuf_dataDir = '~/.vim/fuf-data'
+let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_custom_ignore = '\/\.git\/\|\~$\|\.swo$\|\.swp$'
 
 " set options
 set number
@@ -119,8 +110,6 @@ nnoremap <F3> :Tlist<CR>
 imap <leader><leader> <Esc>
 nnoremap <leader>n ^i<CR><Esc>
 nnoremap <F7> :ConqueTermSplit bash<CR>
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-p> :bprevious<CR>
 "nmap <F5> :buffers<CR>:buffer 
 map <silent> <Home> :SmartHomeKey <CR>
 imap <silent> <Home> <C-O>:SmartHomeKey<CR>
