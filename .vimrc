@@ -74,6 +74,9 @@ let NERDTreeIgnore = ['\.pyc$', '\~$', '\.o']
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_custom_ignore = '\/\.git\/\|\~$\|\.swo$\|\.swp$'
 
+let delimitMate_expand_cr = 1
+let delimitMate_expand_space = 1
+
 " set options
 set number
 set hidden
