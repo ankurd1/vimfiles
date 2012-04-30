@@ -77,6 +77,11 @@ let g:ctrlp_custom_ignore = '\/\.git\/\|\~$\|\.swo$\|\.swp$'
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat='pdf'
 " set options
 set number
 set hidden
@@ -110,7 +115,6 @@ imap <leader><space> <C-o><leader>c<space>
 imap <C-space> <C-x><C-o>
 imap <Nul> <C-x><C-o>
 nnoremap <F3> :Tlist<CR>
-imap <leader><leader> <Esc>
 nnoremap <leader>n ^i<CR><Esc>
 nnoremap <F7> :ConqueTermSplit bash<CR>
 "nmap <F5> :buffers<CR>:buffer 
