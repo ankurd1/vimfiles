@@ -71,7 +71,7 @@ let g:netrw_ftp_cmd="ftp -p"
 
 let NERDTreeIgnore = ['\.pyc$', '\~$', '\.o']
 
-let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_custom_ignore = '\/\.git\/\|\~$\|\.swo$\|\.swp$'
 
 let delimitMate_expand_cr = 1
