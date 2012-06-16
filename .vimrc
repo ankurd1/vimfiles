@@ -82,6 +82,10 @@ let delimitMate_expand_space = 1
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
+
+let g:pep8_map='<leader>pp'
+
+let g:ctrlp_max_files = 1000
 " set options
 set number
 set hidden
@@ -111,13 +115,13 @@ nnoremap <leader>' :nohl<CR>
 inoremap <leader>' <C-o>:nohl<CR>
 nnoremap <F6> :BufExplorer<CR>
 map <leader><space> <leader>c<space>
-imap <leader><space> <C-o><leader>c<space>
+"imap <leader><space> <C-o><leader>c<space>
 imap <C-space> <C-x><C-o>
 imap <Nul> <C-x><C-o>
 nnoremap <F3> :Tlist<CR>
 nnoremap <leader>n ^i<CR><Esc>
 nnoremap <F7> :ConqueTermSplit bash<CR>
-"nmap <F5> :buffers<CR>:buffer 
+"nmap <F5> :w<CR>:make<CR>
 map <silent> <Home> :SmartHomeKey <CR>
 imap <silent> <Home> <C-O>:SmartHomeKey<CR>
 

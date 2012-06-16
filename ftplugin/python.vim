@@ -1,4 +1,4 @@
-map R :w<CR>:!ipython -nobanner -noconfirm_exit %<CR>
+"map R :w<CR>:!ipython --no-banner --no-confirm-exit %<CR>
 
 " The magical turn-Vim-into-a-Python-IDE vim resource file!
 "
@@ -51,20 +51,24 @@ set tags+=$HOME/.vim/tags/python.ctags
 
 " Use :make to see syntax errors. (:cn and :cp to move around, :dist to see
 " all errors)
-set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
-set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+"set makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
+"set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+set makeprg=python\ $HOME/.vim/py_vim_make.py\ %
+set efm=%m\|%f\|%l\|%c
 
 " Execute a selection of code (very cool!)
 " Use VISUAL to select a range and then hit ctrl-h to execute it.
 "python << EOL
 "import vim
+"from subprocess import call
+
 "def EvaluateCurrentRange():
     "eval(compile('\n'.join(vim.current.range),'','exec'),globals())
 "EOL
 "map <C-h> :py EvaluateCurrentRange()
 
-" Use F7/Shift-F7 to add/remove a breakpoint (pdb.set_trace)
-" Totally cool.
+ "Use F7/Shift-F7 to add/remove a breakpoint (pdb.set_trace)
+ "Totally cool.
 "python << EOF
 "def SetBreakpoint():
     "import re
@@ -74,7 +78,7 @@ set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
     "strWhite = re.search( '^(\s*)', strLine).group(1)
 
     "vim.current.buffer.append(
-       ""%(space)spdb.set_trace() %(mark)s Breakpoint %(mark)s" %
+       "%(space)spdb.set_trace() %(mark)s Breakpoint %(mark)s" %
          "{'space':strWhite, 'mark': '#' * 30}, nLine - 1)
 
     "for strLine in vim.current.buffer:
@@ -84,7 +88,7 @@ set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
         "vim.current.buffer.append( 'import pdb', 0)
         "vim.command( 'normal j1')
 
-"vim.command( 'map <f7> :py SetBreakpoint()<cr>')
+"vim.command( 'map <f8> :py SetBreakpoint()<cr>')
 
 "def RemoveBreakpoints():
     "import re

@@ -73,7 +73,8 @@ endif
 " remapped it already (or a mapping exists already for <F7>)
 if !exists("no_plugin_maps") && !exists("no_flake8_maps")
     if !hasmapto('Flake8(')
-        noremap <buffer> <F7> :call Flake8()<CR>
-        noremap! <buffer> <F7> :call Flake8()<CR>
+        noremap <buffer> <F8> :call Flake8()<CR>
+        noremap! <buffer> <F8> :call Flake8()<CR>
+        nmap <F5> :call Flake8()<CR>:!python %<CR>
     endif
 endif
