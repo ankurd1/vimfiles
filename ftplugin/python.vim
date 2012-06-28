@@ -8,7 +8,7 @@
 " Julian Edwards 2008-05-30
 
 " Wrapping and tabs.
-set tw=78 ts=4 sw=4 sta et sts=4 ai
+set tw=79 ts=4 sw=4 sta et sts=4 ai
 
 " More syntax highlighting.
 let python_highlight_all = 1
@@ -20,7 +20,7 @@ set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 set omnifunc=pythoncomplete#Complete
 
 " Wrap at 72 chars for comments.
-set formatoptions=cq textwidth=72 foldignore= wildignore+=*.py[co]
+set formatoptions=cq textwidth=79 foldignore= wildignore+=*.py[co]
 
 " Highlight end of line whitespace.
 "highlight WhitespaceEOL ctermbg=red guibg=red
@@ -69,49 +69,49 @@ set efm=%m\|%f\|%l\|%c
 
  "Use F7/Shift-F7 to add/remove a breakpoint (pdb.set_trace)
  "Totally cool.
-"python << EOF
-"def SetBreakpoint():
-    "import re
-    "nLine = int( vim.eval( 'line(".")'))
+python << EOF
+def SetBreakpoint():
+    import re
+    nLine = int( vim.eval( 'line(".")'))
 
-    "strLine = vim.current.line
-    "strWhite = re.search( '^(\s*)', strLine).group(1)
+    strLine = vim.current.line
+    strWhite = re.search( '^(\s*)', strLine).group(1)
 
-    "vim.current.buffer.append(
+    vim.current.buffer.append(
        "%(space)spdb.set_trace() %(mark)s Breakpoint %(mark)s" %
-         "{'space':strWhite, 'mark': '#' * 30}, nLine - 1)
+         {'space':strWhite, 'mark': '#' * 30}, nLine - 1)
 
-    "for strLine in vim.current.buffer:
-        "if strLine == "import pdb":
-            "break
-    "else:
-        "vim.current.buffer.append( 'import pdb', 0)
-        "vim.command( 'normal j1')
+    for strLine in vim.current.buffer:
+        if strLine == "import pdb":
+            break
+    else:
+        vim.current.buffer.append( 'import pdb', 0)
+        vim.command( 'normal j1')
 
-"vim.command( 'map <f8> :py SetBreakpoint()<cr>')
+vim.command( 'map <f7> :py SetBreakpoint()<cr>')
 
-"def RemoveBreakpoints():
-    "import re
+def RemoveBreakpoints():
+    import re
 
-    "nCurrentLine = int( vim.eval( 'line(".")'))
+    nCurrentLine = int( vim.eval( 'line(".")'))
 
-    "nLines = []
-    "nLine = 1
-    "for strLine in vim.current.buffer:
-        "if strLine == "import pdb" or strLine.lstrip()[:15] == "pdb.set_trace()":
-            "nLines.append( nLine)
-        "nLine += 1
+    nLines = []
+    nLine = 1
+    for strLine in vim.current.buffer:
+        if strLine == "import pdb" or strLine.lstrip()[:15] == "pdb.set_trace()":
+            nLines.append( nLine)
+        nLine += 1
 
-    "nLines.reverse()
+    nLines.reverse()
 
-    "for nLine in nLines:
-        "vim.command( "normal %dG" % nLine)
-        "vim.command( "normal dd")
-        "if nLine < nCurrentLine:
-            "nCurrentLine -= 1
+    for nLine in nLines:
+        vim.command( "normal %dG" % nLine)
+        vim.command( "normal dd")
+        if nLine < nCurrentLine:
+            nCurrentLine -= 1
 
-    "vim.command( "normal %dG" % nCurrentLine)
+    vim.command( "normal %dG" % nCurrentLine)
 
-"vim.command( "map <s-f7> :py RemoveBreakpoints()<cr>")
-"EOF
+vim.command( "map <s-f7> :py RemoveBreakpoints()<cr>")
+EOF
 

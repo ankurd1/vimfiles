@@ -86,6 +86,11 @@ let g:Tex_DefaultTargetFormat='pdf'
 let g:pep8_map='<leader>pp'
 
 let g:ctrlp_max_files = 1000
+
+"supertab
+let g:SuperTabLongestHighlight = 1
+let g:SuperTabDefaultCompletionType = "<c-x><c-p>"
+
 " set options
 set number
 set hidden
@@ -145,6 +150,7 @@ nmap <C-Down> <C-W><Down>
 nmap <C-Up> <C-W><Up>
 
 cmap w!! %!sudo tee > /dev/null %
+nnoremap <F4> :NumbersToggle<CR>
 
 "functions
 fun! <SID>DetectHTMLDjango()
