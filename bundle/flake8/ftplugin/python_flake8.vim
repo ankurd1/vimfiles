@@ -75,6 +75,5 @@ if !exists("no_plugin_maps") && !exists("no_flake8_maps")
     if !hasmapto('Flake8(')
         noremap <F8> :call Flake8()<CR>
         noremap! <F8> :call Flake8()<CR>
-        nmap <F5> :call Flake8()<CR>:!python %<CR>
     endif
 endif

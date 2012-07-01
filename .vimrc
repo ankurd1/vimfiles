@@ -125,8 +125,7 @@ imap <C-space> <C-x><C-o>
 imap <Nul> <C-x><C-o>
 nnoremap <F3> :Tlist<CR>
 nnoremap <leader>n ^i<CR><Esc>
-nnoremap <F7> :ConqueTermSplit bash<CR>
-"nmap <F5> :w<CR>:make<CR>
+nmap <F5> :w<CR>:make<CR>
 map <silent> <Home> :SmartHomeKey <CR>
 imap <silent> <Home> <C-O>:SmartHomeKey<CR>
 
@@ -152,6 +151,8 @@ nmap <C-Up> <C-W><Up>
 cmap w!! %!sudo tee > /dev/null %
 nnoremap <F4> :NumbersToggle<CR>
 
+let fgc=0
+nnoremap <F7> :let fgc=!fgc<Bar>:if fgc<Bar>:Gstatus<Bar>:else<Bar>:close<Bar>:endif<CR>
 "functions
 fun! <SID>DetectHTMLDjango()
 	let n = 1
