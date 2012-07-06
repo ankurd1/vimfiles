@@ -125,7 +125,6 @@ imap <C-space> <C-x><C-o>
 imap <Nul> <C-x><C-o>
 nnoremap <F3> :Tlist<CR>
 nnoremap <leader>n ^i<CR><Esc>
-nmap <F5> :w<CR>:make<CR>
 map <silent> <Home> :SmartHomeKey <CR>
 imap <silent> <Home> <C-O>:SmartHomeKey<CR>
 

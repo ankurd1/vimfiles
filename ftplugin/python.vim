@@ -55,6 +55,7 @@ set tags+=$HOME/.vim/tags/python.ctags
 "set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 set makeprg=python\ $HOME/.vim/py_vim_make.py\ %
 set efm=%m\|%f\|%l\|%c
+nmap <f5> :make<CR>
 
 " Execute a selection of code (very cool!)
 " Use VISUAL to select a range and then hit ctrl-h to execute it.
