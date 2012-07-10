@@ -51,6 +51,8 @@ snippet .
 	self.
 snippet pdb
 	import pdb; pdb.set_trace()
+snippet ipdb
+	import ipdb; ipdb.set_trace()
 snippet try Try/Except
 	try:
 		${1:pass}
@@ -86,3 +88,5 @@ snippet ifmain
 # __magic__
 snippet _
 	__${1:init}__${2}
+snippet wxinspect
+	import wx.lib.inspection; wx.lib.inspection.InspectionTool().Show()
