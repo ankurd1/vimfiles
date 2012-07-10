@@ -34,3 +34,6 @@
 [submodule "bundle/golang"]
 	path = bundle/golang
 	url = https://github.com/jnwhiteh/vim-golang.git
+[submodule "bundle/slime"]
+	path = bundle/slime
+	url = https://github.com/jpalardy/vim-slime.git
