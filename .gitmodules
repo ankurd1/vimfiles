@@ -37,3 +37,6 @@
 [submodule "bundle/slime"]
 	path = bundle/slime
 	url = https://github.com/jpalardy/vim-slime.git
+[submodule "bundle/minibufexpl"]
+	path = bundle/minibufexpl
+	url = https://github.com/fholgado/minibufexpl.vim.git

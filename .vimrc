@@ -32,7 +32,7 @@ set autoindent		" always set autoindenting on
 "  :20  :	up to 20 lines of command-line history will be remembered
 "  %    : 	saves and restores the buffer list
 "  n... : 	where to save the viminfo files
-set viminfo='10,\"100,:20,%,n~/.viminfo
+set viminfo='10,\"100,:200,n~/.viminfo
 
 " Custom stuff starts here
 
@@ -86,6 +86,8 @@ let g:Tex_DefaultTargetFormat='pdf'
 let g:pep8_map='<leader>pp'
 
 let g:ctrlp_max_files = 1000
+
+let g:miniBufExplMapWindowNavVim = 1
 
 "supertab
 let g:SuperTabLongestHighlight = 1
@@ -146,6 +148,9 @@ nmap <C-Left> <C-W><Left>
 nmap <C-Right> <C-W><Right>
 nmap <C-Down> <C-W><Down>
 nmap <C-Up> <C-W><Up>
+
+nmap , :bprev<CR>
+nmap . :bnext<CR>
 
 cmap w!! %!sudo tee > /dev/null %
 nnoremap <F4> :NumbersToggle<CR>
