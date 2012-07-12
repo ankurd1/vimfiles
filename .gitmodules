@@ -40,3 +40,12 @@
 [submodule "bundle/minibufexpl"]
 	path = bundle/minibufexpl
 	url = https://github.com/fholgado/minibufexpl.vim.git
+[submodule "bundle/rope-vim"]
+	path = bundle/rope-vim
+	url = https://github.com/sontek/rope-vim.git
+[submodule "bundle/gummybears"]
+	path = bundle/gummybears
+	url = https://github.com/jelera/vim-gummybears-colorscheme.git
+[submodule "bundle/vombato"]
+	path = bundle/vombato
+	url = https://github.com/molok/vim-vombato-colorscheme.git

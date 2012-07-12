@@ -91,7 +91,14 @@ let g:miniBufExplMapWindowNavVim = 1
 
 "supertab
 let g:SuperTabLongestHighlight = 1
+let g:SuperTabClosePreviewOnPopupClose = 1
 let g:SuperTabDefaultCompletionType = "<c-x><c-p>"
+"let g:SuperTabContextDefaultCompletionType = "<c-x><c-p>"
+let g:SuperTabMappingForward = '<tab>'
+let g:SuperTabMappingBackward = '<s-tab>'
+
+let g:ropevim_vim_completion=1
+let g:ropevim_extended_complete=1
 
 " set options
 set number
@@ -149,8 +156,8 @@ nmap <C-Right> <C-W><Right>
 nmap <C-Down> <C-W><Down>
 nmap <C-Up> <C-W><Up>
 
-nmap , :bprev<CR>
-nmap . :bnext<CR>
+nmap <s-tab> :bprev<CR>
+nmap <tab> :bnext<CR>
 
 cmap w!! %!sudo tee > /dev/null %
 nnoremap <F4> :NumbersToggle<CR>
