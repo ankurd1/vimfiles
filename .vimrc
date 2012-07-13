@@ -100,6 +100,7 @@ let g:SuperTabMappingBackward = '<s-tab>'
 let g:ropevim_vim_completion=1
 let g:ropevim_extended_complete=1
 
+let g:coffee_lint_options = '-f ~/.vim/misc/coffeelint.json'
 " set options
 set number
 set hidden

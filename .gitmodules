@@ -49,3 +49,6 @@
 [submodule "bundle/vombato"]
 	path = bundle/vombato
 	url = https://github.com/molok/vim-vombato-colorscheme.git
+[submodule "bundle/coffee"]
+	path = bundle/coffee
+	url = https://github.com/kchmck/vim-coffee-script.git
