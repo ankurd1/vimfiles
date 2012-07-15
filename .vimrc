@@ -101,6 +101,10 @@ let g:ropevim_vim_completion=1
 let g:ropevim_extended_complete=1
 
 let g:coffee_lint_options = '-f ~/.vim/misc/coffeelint.json'
+ 
+"let g:miniBufExplorerMoreThanOne=1000
+let g:miniBufExplModSelTarget = 1
+let g:proj_flags = 'instg'
 " set options
 set number
 set hidden
