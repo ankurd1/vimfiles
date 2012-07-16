@@ -153,6 +153,7 @@ imap <C-V> <Esc>"+]p
 nmap <C-V> <Esc>"+]p
 vmap <C-C> "+y
 vmap <C-x> "+d
+nnoremap <leader>v <C-V>
 
 nmap <leader>m :Mru<CR>
 
