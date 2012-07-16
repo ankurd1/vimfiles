@@ -162,10 +162,11 @@ nmap <s-tab> :bprev<CR>
 nmap <tab> :bnext<CR>
 
 cmap w!! %!sudo tee > /dev/null %
-nnoremap <F4> :NumbersToggle<CR>
 
 let fgc=0
-nnoremap <F7> :let fgc=!fgc<Bar>:if fgc<Bar>:Gstatus<Bar>:else<Bar>:close<Bar>:endif<CR>
+nnoremap <leader>gs :let fgc=!fgc<Bar>:if fgc<Bar>:Gstatus<Bar>:else<Bar>:close<Bar>:endif<CR>
+
+nmap <leader>gd :CMiniBufExplorer<CR>:Gdiff<CR>
 "functions
 fun! <SID>DetectHTMLDjango()
 	let n = 1
