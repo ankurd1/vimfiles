@@ -41,9 +41,7 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
 set t_Co=256
-let g:solarized_termcolors=256
-set background=dark
-colorscheme solarized
+colorscheme tomorrow-night-eighties
 
 "behave like win
 source ~/.vim/mswin.vim
@@ -71,11 +69,8 @@ let g:netrw_ftp_cmd="ftp -p"
 
 let NERDTreeIgnore = ['\.pyc$', '\~$', '\.o']
 
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlPMRUFiles'
 let g:ctrlp_custom_ignore = '\/\.git\/\|\~$\|\.swo$\|\.swp$'
-
-let delimitMate_expand_cr = 1
-let delimitMate_expand_space = 1
 
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
@@ -125,6 +120,7 @@ set sw=4
 set sts=4
 set tw=80
 set cc=+1
+set cursorline
 
 "Hotkeys
 let nt=0
