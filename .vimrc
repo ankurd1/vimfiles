@@ -41,7 +41,8 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
 set t_Co=256
-colorscheme tomorrow-night-eighties
+colorscheme slate
+hi link MBENormal Error
 
 "behave like win
 source ~/.vim/mswin.vim
